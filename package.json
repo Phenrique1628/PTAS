@@ -1,0 +1,14 @@
+{
+  "name": "ptas",
+  "version": "1.0.0",
+  "description": "O que é o middleware?\r Middleware é uma camada de software que realiza a conexão do sitema operacional com aplicações, dados e usuários. Ele disponibiliza recursos e serviços compartilhados, como o single sign-on (SSO) e gerenciamento de interfaces de programação de aplicações(APIs). Os desenvolvedores o utilizam para dar suporte ao desenvolvimento de aplicações e simplificar os processos de design, por exemplo ele facilita a comunicação entre servidores que muitas vezes possuem tecnologias diferentes, ele pode gerenciar a persistência de dados, oferecendo serviços como acesso a banco de dados, caching e transações, e dentre outras funcionalidades.",
+  "main": "routes.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.21.1"
+  }
+}
