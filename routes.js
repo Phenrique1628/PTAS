@@ -1,27 +1,32 @@
 const express = require('express');
 const app = express();
 const port = 3000
-const controller = require('./itemsControllers')
-const router = express.Router()
+const listar = require('./itemsControllers');
+
+app.use((req, res, next) => {
+  req.time = new Date(Date.now()).toString();
+  console.log(req.method, req.hostname, req.path, req.time);
+  next();
+
+})
+
+
 app.use(express.json());
 
 
-router.get('/', controller.HomePage)
+app.get('/', (req, res) =>{
+  res.send("Boas Vindas!")
+})
 
-router.get('/items', controller.listarItens)
-
-router.post('/items', controller.criarItem);
-
-router.put('/items/:id', controller.AtualizarItem);
-
-router.delete('/items/:id', controller.ExcluirItem);
+app.get('/items', listar)
 
 
-app.use('/', router);
+
+
 
 app.listen(port, () => {
-    console.log("Servidor Rodando")
+    console.log(`Servidor Rodando http://localhost:${port}`)
   })
 
-module.express = router
+
   
